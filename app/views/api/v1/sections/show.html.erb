@@ -1,0 +1,15 @@
+<h4>sections#show</h4>
+
+<div>
+	<%= @section.title %> 
+</div>
+<div>
+	<%= @section.description %>
+</div>
+
+<h3>section lessons</h3>
+<div>
+	<% @section.lessons.each do |lesson| %>
+		<%= lesson.title %>
+	<% end %>
+</div>

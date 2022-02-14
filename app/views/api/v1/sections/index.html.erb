@@ -1,0 +1,23 @@
+<h4><%= @course.title + "sections" %> </h4>
+<h3>Sections</h3>
+
+<div>
+	<% @sections.each do |section| %>
+		<div>
+			<%= section.title %>
+		</div>
+		<div>
+			<h3><%= section.title %> lessons</h3>
+		</div>
+		<div>
+			<ul>
+				<% section.lessons.each do |lesson| %>
+				<li><%= lesson.title %></li>
+				<div>
+					<%= link_to 'check out lesson', api_v1_lesson_url(lesson) %>
+				</div>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>	
+</div>

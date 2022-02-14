@@ -1,0 +1,14 @@
+courses#show
+<div>
+	<%= @course.title %>
+</div>
+<div>
+	<%= @course.description %> 
+</div>
+
+<h3>course sections</h3>
+<div>
+	<% @course.sections.each do |section| %> 
+		<%= section.title %>
+	<% end %>
+</div>

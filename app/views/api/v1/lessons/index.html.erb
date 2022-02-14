@@ -1,0 +1,15 @@
+<h3>lessons</h3>
+
+<div>
+	<% @lessons.each do |lesson| %> 
+		<div>
+			<%= lesson.title %>
+		</div>
+		<div>
+			<%= lesson.description %>
+		</div>
+		<div>
+			<p>video goes here</p>
+		</div>
+	<% end %>
+</div>

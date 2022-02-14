@@ -1,0 +1,21 @@
+<!-- note that the views must be scoped same as the controller -->
+<p id="notice"><%= notice %></p>
+
+<h3>Courses</h3>
+
+<% @courses.each do |course| %> 
+	<div>
+		<div>
+			<h4><%= course.title %></h4>
+				<div>
+					<!-- course image goes here -->
+				</div>
+				<div>
+					<%= course.description %>
+				</div>
+				<div>
+					<%= link_to 'sections', api_v1_course_sections_url(course) %>
+				</div>
+		</div>
+	</div>
+<% end %>
