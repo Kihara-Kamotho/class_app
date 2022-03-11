@@ -1,23 +1,31 @@
-<h4><%= @course.title + "sections" %> </h4>
-<h3>Sections</h3>
-
 <div>
-	<% @sections.each do |section| %>
-		<div>
-			<%= section.title %>
-		</div>
-		<div>
-			<h3><%= section.title %> lessons</h3>
-		</div>
-		<div>
-			<ul>
-				<% section.lessons.each do |lesson| %>
-				<li><%= lesson.title %></li>
-				<div>
-					<%= link_to 'check out lesson', api_v1_lesson_url(lesson) %>
+	<div class="sections-header pb-2 mt-4 mb-2 border-bottom">
+		<h2><%= @course.title + " sections" %></h2>
+	</div>
+	<div class="container">
+		<% @sections.each do |section| %>
+			<div class="section-title">
+				<strong><%= section.title %></strong>
+			</div>
+			<div class="section-description">
+				<%= section.description %>
+			</div>
+			<div class="p-2">
+				<%= link_to "Show", api_v1_section_path(section), class: "btn btn-success" %>
+			</div>
+			<div class="section-lessons">
+				<div class="p-4">
+					<h3><%= section.title %> lessons</h3>
+					<ul>
+						<% section.lessons.each do |lesson| %>
+						<li><%= lesson.title %></li>
+						<div class="p-2">
+							<%= link_to 'check out lesson', api_v1_lesson_url(lesson), class: "btn btn-warning"%>
+						</div>
+					<% end %>
+					</ul>
 				</div>
-			<% end %>
-			</ul>
-		</div>
-	<% end %>	
+			</div>
+		<% end %>
+	</div>
 </div>

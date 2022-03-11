@@ -1,15 +1,20 @@
-<h4>sections#show</h4>
-
-<div>
-	<%= @section.title %> 
-</div>
-<div>
-	<%= @section.description %>
+<div class="section">
+	<div class="section-title">
+		<strong><h4><%= @section.title %></h4></strong>
+	</div>
+	<div class="section-description">
+		<%= @section.description %>
+	</div>
+	<div class="section-lessons">
+		<div class="">
+			<% @section.lessons.each do |lesson| %>
+				<%= lesson.title %>
+			<% end %>
+		</div>
+	</div>
 </div>
 
 <h3>section lessons</h3>
 <div>
-	<% @section.lessons.each do |lesson| %>
-		<%= lesson.title %>
-	<% end %>
+
 </div>
